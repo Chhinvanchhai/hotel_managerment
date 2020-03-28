@@ -77,6 +77,12 @@
     <Compile Include="HomeFolder\Foods.Designer.cs">
       <DependentUpon>Foods.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeFolder\FormDetial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeFolder\FormDetial.Designer.cs">
+      <DependentUpon>FormDetial.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeFolder\GuestRegister.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -94,6 +100,12 @@
     </Compile>
     <Compile Include="HomeFolder\reservation.Designer.cs">
       <DependentUpon>reservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeFolder\showGuestList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeFolder\showGuestList.Designer.cs">
+      <DependentUpon>showGuestList.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -119,6 +131,9 @@
     <EmbeddedResource Include="HomeFolder\Foods.resx">
       <DependentUpon>Foods.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HomeFolder\FormDetial.resx">
+      <DependentUpon>FormDetial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeFolder\GuestRegister.resx">
       <DependentUpon>GuestRegister.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomeFolder\reservation.resx">
       <DependentUpon>reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeFolder\showGuestList.resx">
+      <DependentUpon>showGuestList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

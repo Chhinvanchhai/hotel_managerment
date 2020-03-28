@@ -39,8 +39,8 @@ namespace hotel_managerment
         public void AddControll(Control c)
         {
             c.Dock = DockStyle.Fill;
-            hfg.Controls.Clear();
-            hfg.Controls.Add(c);
+            panelHome.Controls.Clear();
+            panelHome.Controls.Add(c);
 
         }
 
@@ -56,17 +56,11 @@ namespace hotel_managerment
             lg.Show();
         }
 
-        private void lbFood_Click(object sender, EventArgs e)
+        public void guestPanel()
         {
-            panelActive.Width = lbFood.Width;
-            panelActive.Left = lbFood.Left;
-            
-        }
-
-        private void lbReservation_Click(object sender, EventArgs e)
-        {
-            panelActive.Width = lbReservation.Width;
-            panelActive.Left = lbReservation.Left;
+            panelActive.Width = lbRegister.Width;
+            panelActive.Left = lbRegister.Left;
+            MessageBox.Show("this word for me gues panel");
         }
 
         private void lbRoomAvialable_Click(object sender, EventArgs e)
@@ -95,15 +89,15 @@ namespace hotel_managerment
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (guest.InsertGuest())
-            {
-                guest.InsertGuest();
-                panelActive.Width = lbReservation.Width;
-                panelActive.Left = lbReservation.Left;
-                btnNext.Hide();
-                btnNextFood.Show();
-                AddControll(reserve);
-            }
+            //if (guest.InsertGuest())
+            //{
+            //    guest.InsertGuest();
+            //    panelActive.Width = lbReservation.Width;
+            //    panelActive.Left = lbReservation.Left;
+            //    btnNext.Hide();
+            //    btnNextFood.Show();
+            //    AddControll(reserve);
+            //}
         }
 
         private void btnNextFood_Click(object sender, EventArgs e)
@@ -113,10 +107,34 @@ namespace hotel_managerment
             {
                 Foods food = new Foods();
                 AddControll(food);
-                panelActive.Width = lbFood.Width;
-                panelActive.Left = lbFood.Left;
             }
            
+        }
+
+        private void hfg_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            showGuestList listGuest = new showGuestList();
+            panelActive.Width = lbGuest.Width;
+            panelActive.Left = lbGuest.Left;
+            AddControll(listGuest);
+        }
+
+        private void lbHome_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lbRegister_Click(object sender, EventArgs e)
+        {
+            GuestRegister guest = new GuestRegister();
+            panelActive.Width = lbRegister.Width;
+            panelActive.Left = lbRegister.Left;
+            AddControll(guest);
         }
     }
 }

@@ -42,6 +42,35 @@ namespace hotel_managerment
             }
         }
 
+        public int executeId(String sql)
+        {
+            try
+            {
+                connect.Close();
+                if (connect.State == ConnectionState.Closed)
+                {
+                    connect.Open();
+
+                }
+                command.Connection = connect;
+                command.CommandText = sql;
+                command.ExecuteNonQuery();
+                string get_id = "select  top 1 id  from Guest ORDER BY id DESC";
+                command.CommandText = get_id;
+                int id = (int)command.ExecuteScalar();
+
+                connect.Close();
+                return id;
+
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+        
+
         public bool Isexist(String sql)
         {
             try
@@ -93,6 +122,24 @@ namespace hotel_managerment
             //return data;
             //return null;
             return command.ExecuteReader();
+        }
+
+        public string GetId(string sql)
+        {
+            try
+            {
+                connect.Close();
+                if (connect.State == ConnectionState.Closed)
+                    connect.Open();
+                command.CommandText = sql;
+                var data = command.ExecuteScalar();
+                connect.Close();
+                return data.ToString();
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

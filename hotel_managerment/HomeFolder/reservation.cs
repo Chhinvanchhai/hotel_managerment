@@ -41,8 +41,8 @@ namespace hotel_managerment.HomeFolder
                 MessageBox.Show("Please fill the field");
                 return false;
             }
-            var sql = "insert into Reservation(guest_id,room_id,check_in_date,check_out_date)" +
-                " Values('"+adult_num.Text+"','"+chlid_num.Text+"','" + check_id.Value.ToString() + "','" + check_out.Value.ToString() + "')";
+            var sql = "insert into Reservation(adults,childs,check_in_date,check_out_date,guest_id,room_id)" +
+                " Values('"+adult_num.Text+"','"+chlid_num.Text+"','" + check_id.Value.ToString() + "','" + check_out.Value.ToString() + "','"+this.Tag+"','"+room_id.Text+"')";
             if (!db.execute(sql))
             {
                 MessageBox.Show("Failed to insert!");
@@ -59,7 +59,6 @@ namespace hotel_managerment.HomeFolder
         {
             var sql = "SELECT * FROM Room WHERE status = 'Available'";
             var data = db.GetData(sql);
-            MessageBox.Show(Tag.ToString());
             while (data.Read())
             {
                 ListViewItem list = lsRoom.Items.Add(data[0].ToString());
@@ -82,7 +81,7 @@ namespace hotel_managerment.HomeFolder
 
         private void cmbFood_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
+
     }
 }

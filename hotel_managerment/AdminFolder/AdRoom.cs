@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using hotel_managerment.HomeFolder;
 
 namespace hotel_managerment.AdminFolder
 {
@@ -164,7 +165,8 @@ namespace hotel_managerment.AdminFolder
 
         private void lsAllRoom_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            FormDetial fd = new FormDetial();
+            fd.ShowDialog();
         }
     }
 }

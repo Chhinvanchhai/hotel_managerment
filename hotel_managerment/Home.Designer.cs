@@ -33,21 +33,19 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbReservation = new System.Windows.Forms.Label();
             this.PanelLine = new System.Windows.Forms.Panel();
             this.panelActive = new System.Windows.Forms.Panel();
-            this.lbFood = new System.Windows.Forms.Label();
             this.lbRoomAvialable = new System.Windows.Forms.Label();
-            this.hfg = new System.Windows.Forms.Panel();
+            this.panelHome = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.btnBook = new System.Windows.Forms.Button();
             this.lbRegister = new System.Windows.Forms.Label();
             this.lbHome = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnNextFood = new System.Windows.Forms.Button();
-            this.lb_payment = new System.Windows.Forms.Label();
+            this.lbGuest = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            this.hfg.SuspendLayout();
+            this.panelHome.SuspendLayout();
             this.SuspendLayout();
             // 
             // entryDatePicker
@@ -98,17 +96,6 @@
             this.adminToolStripMenuItem.Text = "Admin";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
-            // lbReservation
-            // 
-            this.lbReservation.AutoSize = true;
-            this.lbReservation.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbReservation.Location = new System.Drawing.Point(542, 93);
-            this.lbReservation.Name = "lbReservation";
-            this.lbReservation.Size = new System.Drawing.Size(219, 48);
-            this.lbReservation.TabIndex = 39;
-            this.lbReservation.Text = "Reservation";
-            this.lbReservation.Click += new System.EventHandler(this.lbReservation_Click);
-            // 
             // PanelLine
             // 
             this.PanelLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -127,40 +114,30 @@
             this.panelActive.Size = new System.Drawing.Size(106, 10);
             this.panelActive.TabIndex = 41;
             // 
-            // lbFood
-            // 
-            this.lbFood.AutoSize = true;
-            this.lbFood.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFood.Location = new System.Drawing.Point(831, 93);
-            this.lbFood.Name = "lbFood";
-            this.lbFood.Size = new System.Drawing.Size(104, 48);
-            this.lbFood.TabIndex = 42;
-            this.lbFood.Text = "Food";
-            this.lbFood.Click += new System.EventHandler(this.lbFood_Click);
-            // 
             // lbRoomAvialable
             // 
             this.lbRoomAvialable.AutoSize = true;
             this.lbRoomAvialable.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRoomAvialable.Location = new System.Drawing.Point(1314, 93);
+            this.lbRoomAvialable.Location = new System.Drawing.Point(556, 90);
             this.lbRoomAvialable.Name = "lbRoomAvialable";
             this.lbRoomAvialable.Size = new System.Drawing.Size(288, 48);
             this.lbRoomAvialable.TabIndex = 44;
             this.lbRoomAvialable.Text = "Room Avialable";
             this.lbRoomAvialable.Click += new System.EventHandler(this.lbRoomAvialable_Click);
             // 
-            // hfg
+            // panelHome
             // 
-            this.hfg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.hfg.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.hfg.Controls.Add(this.button2);
-            this.hfg.Controls.Add(this.btnBook);
-            this.hfg.Location = new System.Drawing.Point(53, 197);
-            this.hfg.Name = "hfg";
-            this.hfg.Size = new System.Drawing.Size(2174, 937);
-            this.hfg.TabIndex = 43;
+            this.panelHome.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panelHome.Controls.Add(this.button2);
+            this.panelHome.Controls.Add(this.btnBook);
+            this.panelHome.Location = new System.Drawing.Point(53, 197);
+            this.panelHome.Name = "panelHome";
+            this.panelHome.Size = new System.Drawing.Size(2174, 937);
+            this.panelHome.TabIndex = 43;
+            this.panelHome.Paint += new System.Windows.Forms.PaintEventHandler(this.hfg_Paint);
             // 
             // button2
             // 
@@ -196,11 +173,12 @@
             // 
             this.lbRegister.AutoSize = true;
             this.lbRegister.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRegister.Location = new System.Drawing.Point(216, 93);
+            this.lbRegister.Location = new System.Drawing.Point(244, 90);
             this.lbRegister.Name = "lbRegister";
-            this.lbRegister.Size = new System.Drawing.Size(267, 48);
+            this.lbRegister.Size = new System.Drawing.Size(219, 48);
             this.lbRegister.TabIndex = 45;
-            this.lbRegister.Text = "Guest Register";
+            this.lbRegister.Text = "Reservation";
+            this.lbRegister.Click += new System.EventHandler(this.lbRegister_Click);
             // 
             // lbHome
             // 
@@ -211,6 +189,7 @@
             this.lbHome.Size = new System.Drawing.Size(120, 48);
             this.lbHome.TabIndex = 46;
             this.lbHome.Text = "Home";
+            this.lbHome.Click += new System.EventHandler(this.lbHome_Click);
             // 
             // btnNext
             // 
@@ -236,32 +215,31 @@
             this.btnNextFood.UseVisualStyleBackColor = false;
             this.btnNextFood.Click += new System.EventHandler(this.btnNextFood_Click);
             // 
-            // lb_payment
+            // lbGuest
             // 
-            this.lb_payment.AutoSize = true;
-            this.lb_payment.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_payment.Location = new System.Drawing.Point(1046, 93);
-            this.lb_payment.Name = "lb_payment";
-            this.lb_payment.Size = new System.Drawing.Size(166, 48);
-            this.lb_payment.TabIndex = 49;
-            this.lb_payment.Text = "Payment";
+            this.lbGuest.AutoSize = true;
+            this.lbGuest.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGuest.Location = new System.Drawing.Point(916, 93);
+            this.lbGuest.Name = "lbGuest";
+            this.lbGuest.Size = new System.Drawing.Size(193, 48);
+            this.lbGuest.TabIndex = 50;
+            this.lbGuest.Text = "Guest List";
+            this.lbGuest.Click += new System.EventHandler(this.label1_Click);
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2294, 1167);
-            this.Controls.Add(this.lb_payment);
+            this.Controls.Add(this.lbGuest);
             this.Controls.Add(this.btnNextFood);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.lbHome);
             this.Controls.Add(this.lbRegister);
             this.Controls.Add(this.lbRoomAvialable);
-            this.Controls.Add(this.hfg);
-            this.Controls.Add(this.lbFood);
+            this.Controls.Add(this.panelHome);
             this.Controls.Add(this.panelActive);
             this.Controls.Add(this.PanelLine);
-            this.Controls.Add(this.lbReservation);
             this.Controls.Add(this.entryDatePicker);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -274,7 +252,7 @@
             this.Load += new System.EventHandler(this.Home_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.hfg.ResumeLayout(false);
+            this.panelHome.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,19 +263,17 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
-        private System.Windows.Forms.Label lbReservation;
         private System.Windows.Forms.Panel PanelLine;
         private System.Windows.Forms.Panel panelActive;
-        private System.Windows.Forms.Label lbFood;
         private System.Windows.Forms.Label lbRoomAvialable;
-        private System.Windows.Forms.Panel hfg;
+        private System.Windows.Forms.Panel panelHome;
         private System.Windows.Forms.Label lbRegister;
         private System.Windows.Forms.Label lbHome;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnBook;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnNextFood;
-        private System.Windows.Forms.Label lb_payment;
+        private System.Windows.Forms.Label lbGuest;
     }
 }
 

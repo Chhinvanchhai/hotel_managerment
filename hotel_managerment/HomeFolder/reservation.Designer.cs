@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reservation));
             this.panelRight = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbFood = new System.Windows.Forms.ComboBox();
             this.chlid_num = new System.Windows.Forms.ComboBox();
             this.adult_num = new System.Windows.Forms.ComboBox();
             this.check_out = new System.Windows.Forms.DateTimePicker();
@@ -49,8 +51,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.cmbFood = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -72,12 +72,35 @@
             this.panelRight.Controls.Add(this.label13);
             this.panelRight.Controls.Add(this.label14);
             this.panelRight.Controls.Add(this.label7);
-            this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelRight.Location = new System.Drawing.Point(0, 0);
+            this.panelRight.Location = new System.Drawing.Point(3, 3);
             this.panelRight.Name = "panelRight";
             this.panelRight.Size = new System.Drawing.Size(2081, 1242);
             this.panelRight.TabIndex = 2;
             this.panelRight.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRight_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1190, 144);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 48);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Foods";
+            // 
+            // cmbFood
+            // 
+            this.cmbFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFood.FormattingEnabled = true;
+            this.cmbFood.Items.AddRange(new object[] {
+            "Breakfast($5)",
+            "Breakfast and lunch ($10)",
+            "None"});
+            this.cmbFood.Location = new System.Drawing.Point(1332, 136);
+            this.cmbFood.Name = "cmbFood";
+            this.cmbFood.Size = new System.Drawing.Size(497, 56);
+            this.cmbFood.TabIndex = 37;
+            this.cmbFood.SelectedIndexChanged += new System.EventHandler(this.cmbFood_SelectedIndexChanged);
             // 
             // chlid_num
             // 
@@ -267,30 +290,6 @@
             this.label7.Size = new System.Drawing.Size(372, 55);
             this.label7.TabIndex = 17;
             this.label7.Text = "Room Information";
-            // 
-            // cmbFood
-            // 
-            this.cmbFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbFood.FormattingEnabled = true;
-            this.cmbFood.Items.AddRange(new object[] {
-            "Breakfast($5)",
-            "Breakfast and lunch ($10)",
-            "None"});
-            this.cmbFood.Location = new System.Drawing.Point(1332, 136);
-            this.cmbFood.Name = "cmbFood";
-            this.cmbFood.Size = new System.Drawing.Size(497, 56);
-            this.cmbFood.TabIndex = 37;
-            this.cmbFood.SelectedIndexChanged += new System.EventHandler(this.cmbFood_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1190, 144);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 48);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Foods";
             // 
             // reservation
             // 
